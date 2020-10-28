@@ -30,7 +30,7 @@ public class ReportDollarValueService {
 
     public String exportReportDollarValue(int vendor_id) throws FileNotFoundException, JRException {
         String path = "C:\\Users\\sovann\\Desktop\\Report";
-        List<ReportDollarValue> reportProducts = Arrays.asList(restTemplate.getForObject("http://localhost:9090/api/getAllReportDollarValue/" + vendor_id, ReportDollarValue[].class));
+        List<ReportDollarValue> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportDollarValue/" + vendor_id, ReportDollarValue[].class));
 
         //load file and compile it
         File file = ResourceUtils.getFile("classpath:ReportDollarValue.jrxml");

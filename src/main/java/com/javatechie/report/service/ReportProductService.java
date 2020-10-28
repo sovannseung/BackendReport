@@ -32,7 +32,7 @@ public class ReportProductService {
         String path = "C:\\Users\\sovann\\Desktop\\Report";
         //List<ReportProduct> reportProducts = reportProductRepository.findAll();
         //List<ReportProduct> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportProduct/" + vendor_id, ReportProduct[].class));
-        List<ReportProduct> reportProducts = Arrays.asList(restTemplate.getForObject("http://localhost:9090/api/getAllReportProduct/" + vendor_id, ReportProduct[].class));
+        List<ReportProduct> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportProduct/" + vendor_id, ReportProduct[].class));
 
         //load file and compile it
         File file = ResourceUtils.getFile("classpath:ReportProduct.jrxml");
