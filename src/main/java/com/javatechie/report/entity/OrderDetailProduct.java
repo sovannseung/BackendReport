@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -17,7 +18,7 @@ import java.util.Date;
 public class OrderDetailProduct {
     @Id
     private int rank;
-    private Date order_date;
+    private Timestamp order_date;
     private int product_id;
     private int total_qty;
 }

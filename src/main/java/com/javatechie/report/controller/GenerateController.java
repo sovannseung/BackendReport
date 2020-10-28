@@ -29,11 +29,21 @@ public class GenerateController {
 
     @GetMapping("/monolith/generateReportProduct/{format}")
     public String generateReportProductMono(@PathVariable String format) throws FileNotFoundException, JRException {
-        return reportProductService.exportReportProduct(format);
+        return reportProductService.exportReportProduct(0);
     }
 
     @GetMapping("/monolith/generateReportDollarValue/{format}")
     public String generateReportDollarValueMono(@PathVariable String format) throws FileNotFoundException, JRException {
         return reportDollarValueService.exportReportDollarValue(format);
+    }
+
+    @GetMapping("/api/generateReportProduct")
+    public String generateReportProductByVendorId() throws FileNotFoundException, JRException {
+        return reportProductService.exportReportProduct(0);
+    }
+
+    @GetMapping("/api/generateReportProduct/{vendor_id}")
+    public String generateReportProduct(@PathVariable int vendor_id) throws FileNotFoundException, JRException {
+        return reportProductService.exportReportProduct(vendor_id);
     }
 }

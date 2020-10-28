@@ -11,5 +11,5 @@ public class Card {
     private String cardNumber;
     private String type;
     private String expireDate;
-    private String defaults;
+    private boolean defaults;
 }

@@ -8,6 +8,7 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -21,7 +22,7 @@ public class ReportDollarValue {
     private int rank;
     private int vendor_id;
     private String vendor;
-    private Date order_date;
+    private Timestamp order_date;
     private int numberof_order;
     private double total;
 
