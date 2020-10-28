@@ -33,17 +33,17 @@ public class ReportProductController {
     @Autowired
     private MyProperties myProperties;
 
-    @GetMapping("/monolith/getAllReportProduct")
+    //@GetMapping("/monolith/getAllReportProduct")
     public List<ReportProduct> getAllReportProductMono() {
         return repositoryProduct.findAll();
     }
 
-    @GetMapping("/monolith/getReportProductByVendorId/{vendor_id}")
+    //@GetMapping("/monolith/getReportProductByVendorId/{vendor_id}")
     public List<ReportProduct> getReportProductByVendorIdMono(@PathVariable int vendor_id) {
         return repositoryProduct.findReportProductByVendorId(vendor_id);
     }
 
-    @GetMapping("/api/test")
+    //@GetMapping("/api/test")
     public List<Product> test() throws IOException, ParseException {
         //return restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts", PostTest[].class);
 
@@ -142,7 +142,7 @@ public class ReportProductController {
             return result.stream().filter(r -> r.getVendor_id() == vendor_id).collect(Collectors.toList());
     }
 
-    private List<Product> mockProduct () {
+    public List<Product> mockProduct () {
         return Arrays.asList(
                 new Product(1,
                         "Books",
@@ -180,7 +180,7 @@ public class ReportProductController {
         );
     }
 
-    private List<User> mockUser() {
+    public List<User> mockUser() {
         return Arrays.asList(
                 new User(1,
                         "admin",
