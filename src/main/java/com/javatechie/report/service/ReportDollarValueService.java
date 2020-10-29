@@ -14,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -33,12 +34,18 @@ public class ReportDollarValueService {
         List<ReportDollarValue> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportDollarValue/" + vendor_id, ReportDollarValue[].class));
 
         //load file and compile it
-        File file = ResourceUtils.getFile("classpath:ReportDollarValue.jrxml");
-        JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
+        //File file = ResourceUtils.getFile("classpath:ReportDollarValue.jrxml");
+        ClassLoader cl = this.getClass().getClassLoader();
+        InputStream file = cl.getResourceAsStream("ReportDollarValue.jrxml");
+
+        //JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
+        JasperReport jasperReport = JasperCompileManager.compileReport(file);
+
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(reportProducts);
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("createdBy", "");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
+
         JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\ReportDollarvalue.pdf");
 
         return "report generated in path : " + path;
