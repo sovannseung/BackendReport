@@ -54,7 +54,7 @@ public class GenerateController {
         return reportDollarValueService.exportReportDollarValue(0);
     }
 
-    @GetMapping("/api/generateReportDollarValueByVendorId/{vendor_id}")
+    @GetMapping("/api/generateReportDollar/{vendor_id}")
     public String generateReportDollarValue(@PathVariable int vendor_id) throws FileNotFoundException, JRException {
         return reportDollarValueService.exportReportDollarValue(vendor_id);
     }

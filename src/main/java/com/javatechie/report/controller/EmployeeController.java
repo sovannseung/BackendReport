@@ -13,7 +13,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository repository;
 
-    @GetMapping("/getEmployees")
+    //@GetMapping("/getEmployees")
     public List<Employee> getEmployees() {
 
         return repository.findAll();
