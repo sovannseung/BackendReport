@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a35324b-4c88-44a2-8a88-24b79938d33b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javatechie/report/controller/ReportProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javatechie/report/controller/ReportProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javatechie/report/service/ReportProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javatechie/report/service/ReportProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ReportProduct.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ReportProduct.jrxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,14 +20,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/javatechie/report/controller/GenerateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+            <state relative-caret-position="45">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ReportDollarValue.jrxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="133" column="15" lean-forward="true" selection-start-line="133" selection-start-column="15" selection-end-line="133" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -43,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/ReportProduct.jrxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+            <state relative-caret-position="156">
+              <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -69,18 +76,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javatechie/report/controller/OrderDetailDollarValueController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="18" column="38" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/javatechie/report/repository/ReportProductRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/report/ReportProduct.jrxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/javatechie/report/service/ReportService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ReportProduct.jrxml" />
         <option value="$PROJECT_DIR$/src/main/resources/ReportDollarValue.jrxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/javatechie/report/Config/MyProperties.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javatechie/report/repository/OrderDetailProductRepository.java" />
@@ -194,6 +188,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/javatechie/report/controller/ReportProductController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javatechie/report/service/ReportProductService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/ReportProduct.jrxml" />
       </list>
     </option>
   </component>
@@ -361,7 +356,7 @@
       <workItem from="1603894518801" duration="22361000" />
       <workItem from="1603930460441" duration="3833000" />
       <workItem from="1603935556575" duration="2169000" />
-      <workItem from="1603984922543" duration="5105000" />
+      <workItem from="1603984922543" duration="5725000" />
     </task>
     <task id="LOCAL-00001" summary="Fix generate report">
       <created>1603568678953</created>
@@ -374,7 +369,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95505000" />
+    <option name="totallyTimeSpent" value="96125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -427,13 +422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1960">
           <caret line="98" column="51" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ReportDollarValue.jrxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="133" column="15" lean-forward="true" selection-start-line="133" selection-start-column="15" selection-end-line="133" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -703,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ReportProduct.jrxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/javatechie/report/service/ReportProductService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
@@ -729,11 +710,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/javatechie/report/controller/GenerateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        <state relative-caret-position="45">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ReportDollarValue.jrxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="133" column="15" lean-forward="true" selection-start-line="133" selection-start-column="15" selection-end-line="133" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ReportProduct.jrxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
         </state>
       </provider>
     </entry>
