@@ -69,12 +69,15 @@ public class ReportProductController {
     private List<ReportProduct> reportProduct(int vendor_id)  {
 
         //****** 1. Get data from OrderDetailProduct by using RestTemplate
+        // For example: https://backend-report.herokuapp.com/api/getAllOrderDetailProduct
         List<OrderDetailProduct> orderDetailProductList  = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllOrderDetailProduct", OrderDetailProduct[].class));
 
         //****** 2. Mock up Product. Sometime we can filter by vendor_id
+        // For example: https://pm-user-service-v2.herokuapp.com/api/user/list
         List<Product> productList = mockProduct();
 
         //****** 3. Mock up User object for vendor
+        // For example: https://product-service.herokuapp.com/api/product
         List<User> userList = mockUser();
 
         // Add userList to HashMap

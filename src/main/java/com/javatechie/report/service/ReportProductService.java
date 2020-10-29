@@ -14,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -35,8 +36,13 @@ public class ReportProductService {
         List<ReportProduct> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportProduct/" + vendor_id, ReportProduct[].class));
 
         //load file and compile it
-        File file = ResourceUtils.getFile("classpath:ReportProduct.jrxml");
-        JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
+        //File file = ResourceUtils.getFile("classpath:ReportProduct.jrxml");
+        ClassLoader cl = this.getClass().getClassLoader();
+        InputStream file = cl.getResourceAsStream("ReportProduct.jrxml");
+
+        //JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
+        JasperReport jasperReport = JasperCompileManager.compileReport(file);
+
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(reportProducts);
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("createdBy", "");
