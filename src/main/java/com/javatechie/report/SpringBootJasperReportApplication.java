@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SpringBootJasperReportApplication {
 
-    @LoadBalanced
+    //@LoadBalanced
     @Bean
     RestTemplate restTemplate() {
         return new RestTemplate();
