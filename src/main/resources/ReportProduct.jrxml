@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportProduct" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced95029-b569-4027-895c-af2843a4e088">
-    <style name="Title" fontName="Arial" fontSize="50" isBold="true"/>
-    <style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
-    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
-    <style name="Detail" fontName="Arial" fontSize="12"/>
+    <style name="Title" fontSize="50" isBold="true"/>
+    <style name="SubTitle" forecolor="#736343" fontSize="18"/>
+    <style name="Column header" forecolor="#666666" fontSize="12" isBold="true"/>
+    <style name="Detail" fontSize="12"/>
     <style name="Row" mode="Transparent">
         <conditionalStyle>
             <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
@@ -44,7 +44,7 @@
             <staticText>
                 <reportElement style="SubTitle" x="185" y="49" width="230" height="30" forecolor="#121110" uuid="88d4231e-f014-4b0d-b871-1737ba63a1ae"/>
                 <textElement textAlignment="Center">
-                    <font fontName="Arial" size="24" isBold="true"/>
+                    <font size="24" isBold="true"/>
                 </textElement>
                 <text><![CDATA[In term of Products]]></text>
             </staticText>

@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a35324b-4c88-44a2-8a88-24b79938d33b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javatechie/report/service/ReportDollarValueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javatechie/report/service/ReportDollarValueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ReportDollarValue.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ReportDollarValue.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ReportProduct.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ReportProduct.jrxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -360,7 +357,7 @@
       <workItem from="1603894518801" duration="22361000" />
       <workItem from="1603930460441" duration="3833000" />
       <workItem from="1603935556575" duration="2169000" />
-      <workItem from="1603984922543" duration="8010000" />
+      <workItem from="1603984922543" duration="8512000" />
     </task>
     <task id="LOCAL-00001" summary="Fix generate report">
       <created>1603568678953</created>
@@ -373,13 +370,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98410000" />
+    <option name="totallyTimeSpent" value="98912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2900201" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2900201" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -389,7 +386,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25141242" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25141242" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
