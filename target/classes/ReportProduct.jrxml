@@ -48,17 +48,6 @@
                 </textElement>
                 <text><![CDATA[In term of Products]]></text>
             </staticText>
-<!--            <staticText>-->
-<!--                <reportElement x="172" y="94" width="383" height="42" uuid="f0bfb1ea-a85a-47cd-a1a4-43f22b45e80f"/>-->
-<!--                <textElement textAlignment="Right">-->
-<!--                    <font size="10"/>-->
-<!--                </textElement>-->
-<!--                <text><![CDATA[There are thousand of product to shop here. Enjoy your shopping on our online shopping website with special price. Save today for better future tomorrow.           Address: 1000 N 4th Street, Fairfield, IA 52557]]></text>-->
-<!--            </staticText>-->
-<!--            <image>-->
-<!--                <reportElement x="433" y="-115" width="267" height="209" uuid="5d64e5b3-07bb-48ab-89dc-15c0c46bb19a"/>-->
-<!--                <imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>-->
-<!--            </image>-->
         </band>
     </title>
     <pageHeader>

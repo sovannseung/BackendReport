@@ -30,7 +30,7 @@ public class ReportProductService {
     private MyProperties myProperties;
 
     public String exportReportProduct(int vendor_id) throws FileNotFoundException, JRException {
-        String path = "C:\\Users\\sovann\\Desktop\\Report";
+        String path =  "ReportProduct.pdf";
         //List<ReportProduct> reportProducts = reportProductRepository.findAll();
         //List<ReportProduct> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportProduct/" + vendor_id, ReportProduct[].class));
         List<ReportProduct> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportProduct/" + vendor_id, ReportProduct[].class));
@@ -47,7 +47,7 @@ public class ReportProductService {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("createdBy", "");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
-        JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\ReportProduct.pdf");
+        JasperExportManager.exportReportToPdfFile(jasperPrint, path);
 
         return "report generated in path : " + path;
     }
