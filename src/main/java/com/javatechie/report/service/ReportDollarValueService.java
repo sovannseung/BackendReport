@@ -30,7 +30,7 @@ public class ReportDollarValueService {
     private MyProperties myProperties;
 
     public String exportReportDollarValue(int vendor_id) throws FileNotFoundException, JRException {
-        String path = "C:\\Users\\sovann\\Desktop\\Report";
+        String path = myProperties.getConfigValue("report.path") + "\\ReportDollarvalue.pdf";
         List<ReportDollarValue> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportDollarValue/" + vendor_id, ReportDollarValue[].class));
 
         //load file and compile it
@@ -46,7 +46,7 @@ public class ReportDollarValueService {
         parameters.put("createdBy", "");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
 
-        JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\ReportDollarvalue.pdf");
+        JasperExportManager.exportReportToPdfFile(jasperPrint, path );
 
         return "report generated in path : " + path;
     }

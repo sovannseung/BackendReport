@@ -4,9 +4,9 @@
     <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
     <property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
     <style name="Title" fontSize="50" isBold="true"/>
-    <style name="SubTitle" forecolor="#736343" fontSize="18"/>
-    <style name="Column header" forecolor="#666666" fontSize="12" isBold="true"/>
-    <style name="Detail" fontSize="12"/>
+    <style name="SubTitle" fontName="Arial" forecolor="#736343" fontSize="18"/>
+    <style name="Column header" fontName="Arial" forecolor="#666666" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12"/>
     <style name="Row" mode="Transparent">
         <conditionalStyle>
             <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
@@ -40,7 +40,7 @@
             <staticText>
                 <reportElement style="SubTitle" x="130" y="49" width="350" height="30" forecolor="#121110" uuid="88d4231e-f014-4b0d-b871-1737ba63a1ae"/>
                 <textElement textAlignment="Center">
-                    <font size="24" isBold="true"/>
+                    <font fontName="Arial"  size="24" isBold="true"/>
                 </textElement>
                 <text><![CDATA[In term of Dollar Value]]></text>
             </staticText>

@@ -30,7 +30,7 @@ public class ReportProductService {
     private MyProperties myProperties;
 
     public String exportReportProduct(int vendor_id) throws FileNotFoundException, JRException {
-        String path =  "ReportProduct.pdf";
+        String path = myProperties.getConfigValue("report.path") + "\\ReportProduct.pdf";
         //List<ReportProduct> reportProducts = reportProductRepository.findAll();
         //List<ReportProduct> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportProduct/" + vendor_id, ReportProduct[].class));
         List<ReportProduct> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllReportProduct/" + vendor_id, ReportProduct[].class));
