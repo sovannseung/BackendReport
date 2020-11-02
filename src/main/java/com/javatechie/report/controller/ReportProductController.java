@@ -70,12 +70,13 @@ public class ReportProductController {
 
         //****** 1. Get data from OrderDetailProduct by using RestTemplate
         // For example: https://backend-report.herokuapp.com/api/getAllOrderDetailProduct
-        List<OrderDetailProduct> orderDetailProductList  = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllOrderDetailProduct", OrderDetailProduct[].class));
+        List<OrderDetailProduct> orderDetailProductList  = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "first-report", OrderDetailProduct[].class));
 
         //****** 2. Mock up Product. Sometime we can filter by vendor_id
         // For example: https://pm-user-service-v2.herokuapp.com/api/user/list
-        ProductContent productContent = restTemplate.getForObject(myProperties.getConfigValue("url.product") + "products", ProductContent.class);
-        List<Product> productList = productContent.getContent();
+//        ProductContent productContent = restTemplate.getForObject(myProperties.getConfigValue("url.product") + "products/?size=9999", ProductContent.class);
+//        List<Product> productList = productContent.getContent();
+        List<Product> productList = mockProduct();
 
         //****** 3. Mock up User object for vendor
         // For example: https://product-service.herokuapp.com/api/product
@@ -128,7 +129,6 @@ public class ReportProductController {
         for (OrderDetailProduct o : orderDetailProductList) {
             ReportProduct temp = new ReportProduct();
             DTOProductVendor dtoObj = dtoProductVendorHashMap.get(o.getProduct_id());
-            temp.setRank(o.getRank());
             temp.setVendor_id(dtoObj.getVendor_id());
             temp.setVendor(dtoObj.getVendor());
             temp.setOrder_date(o.getOrder_date());
@@ -148,7 +148,7 @@ public class ReportProductController {
 
     public List<Product> mockProduct () {
         return Arrays.asList(
-                new Product(1,
+                new Product(13,
                         "Books",
                         "Crash Course in Python",
                         "Learn Python at your own pace. The author explains how the technology works in easy-to-understand language. This book includes working examples that you can apply to your own projects. Purchase the book and get started today!",
@@ -159,7 +159,7 @@ public class ReportProductController {
                         "2020-10-25T10:24:14.000+00:00",
                         "2020-10-25T10:24:14.000+00:00",
                         1),
-                new Product(2,
+                new Product(14,
                         "Books",
                         "Become a Guru in JavaScript",
                         "Learn JavaScript at your own pace. The author explains how the technology works in easy-to-understand language. This book includes working examples that you can apply to your own projects. Purchase the book and get started today!",
@@ -192,6 +192,7 @@ public class ReportProductController {
                         "John",
                         "admin@miu.edu",
                         "(800) 369-6480",
+                        true,
                         "1000",
                         "N 4th street",
                         "Fairfield",
@@ -207,6 +208,7 @@ public class ReportProductController {
                         "Chan",
                         "marry@miu.edu",
                         "(807) 654-6180",
+                        true,
                         "1000",
                         "N 4th street",
                         "Fairfield",

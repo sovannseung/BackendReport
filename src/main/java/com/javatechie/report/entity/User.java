@@ -18,6 +18,7 @@ public class User {
     private String lastName;
     private String email;
     private String phone;
+    private boolean enable;
     private String houseNumber;
     private String street;
     private String city;

@@ -21,7 +21,7 @@
     </field>
     <field name="order_date" class="java.sql.Timestamp">
     </field>
-    <field name="numberof_order" class="java.lang.Integer">
+    <field name="number_of_order" class="java.lang.Integer">
     </field>
     <field name="total" class="java.lang.Double">
     </field>
@@ -121,7 +121,7 @@
                         <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8b9e7ab0-6a7c-4a14-af05-e6abe3a7becd"/>
                     </reportElement>
                     <textElement textAlignment="Center"/>
-                    <textFieldExpression><![CDATA[$F{numberof_order}]]></textFieldExpression>
+                    <textFieldExpression><![CDATA[$F{number_of_order}]]></textFieldExpression>
                 </textField>
                 <textField>
                     <reportElement style="Detail" x="422" y="2" width="131" height="15" uuid="da37212b-3331-4323-b278-63b40b8a2396">

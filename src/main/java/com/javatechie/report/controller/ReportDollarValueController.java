@@ -52,9 +52,11 @@ public class ReportDollarValueController {
     private List<ReportDollarValue> reportDollarValues(int vendor_id)  {
 
         //****** 1. Get data from OrderDetailDollarValue by using RestTemplate
-        List<OrderDetailDollarValue> orderDetailDollarValueList  = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "getAllOrderDetailDollarValue", OrderDetailDollarValue[].class));
+        List<OrderDetailDollarValue> orderDetailDollarValueList  = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "second-report", OrderDetailDollarValue[].class));
 
         //****** 2. Mock up Product. Sometime we can filter by vendor_id
+//        ProductContent productContent = restTemplate.getForObject(myProperties.getConfigValue("url.product") + "products/?size=9999", ProductContent.class);
+//        List<Product> productList = productContent.getContent();
         List<Product> productList = obj.mockProduct();
 
         //****** 3. Mock up User object for vendor
@@ -89,11 +91,10 @@ public class ReportDollarValueController {
         for (OrderDetailDollarValue o : orderDetailDollarValueList) {
             ReportDollarValue temp = new ReportDollarValue();
             DTOProductVendor dtoObj = dtoProductVendorHashMap.get(o.getProduct_id());
-            temp.setRank(o.getRank());
             temp.setVendor_id(dtoObj.getVendor_id());
             temp.setVendor(dtoObj.getVendor());
             temp.setOrder_date(o.getOrder_date());
-            temp.setNumberof_order(o.getNumberof_order());
+            temp.setNumberof_order(o.getNumber_of_order());
             temp.setTotal(o.getTotal());
 
             result.add(temp);

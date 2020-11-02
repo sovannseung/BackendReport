@@ -11,15 +11,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Data
 @Getter
-@Entity
-@Table(name = "vorderdetaildollarvalue")
 public class OrderDetailDollarValue {
-    @Id
-    private int rank;
     private Timestamp order_date;
     private int product_id;
-    private int numberof_order;
+    private int number_of_order;
     private double total;
 }
