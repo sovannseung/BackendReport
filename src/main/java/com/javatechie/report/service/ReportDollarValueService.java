@@ -46,8 +46,8 @@ public class ReportDollarValueService {
         parameters.put("createdBy", "");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
 
-        JasperExportManager.exportReportToPdfFile(jasperPrint, path );
+        //JasperExportManager.exportReportToPdfFile(jasperPrint, path );
 
-        return "report generated in path : " + path;
+        return path;
     }
 }

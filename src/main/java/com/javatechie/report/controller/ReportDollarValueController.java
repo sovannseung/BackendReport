@@ -58,7 +58,7 @@ public class ReportDollarValueController {
         List<Product> productList = obj.mockProduct();
 
         //****** 3. Mock up User object for vendor
-        List<User> userList = obj.mockUser();
+        List<User> userList = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.user") + "users", User[].class));
 
         // Add userList to HashMap
         HashMap<Integer, User> userHashMap = new HashMap<Integer, User>();

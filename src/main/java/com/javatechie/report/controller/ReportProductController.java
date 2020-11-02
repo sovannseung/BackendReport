@@ -78,7 +78,7 @@ public class ReportProductController {
 
         //****** 3. Mock up User object for vendor
         // For example: https://product-service.herokuapp.com/api/product
-        List<User> userList = mockUser();
+        List<User> userList = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.user") + "users", User[].class));
 
         // Add userList to HashMap
         HashMap<Integer, User> userHashMap = new HashMap<Integer, User>();
@@ -187,7 +187,6 @@ public class ReportProductController {
         return Arrays.asList(
                 new User(1,
                         "admin",
-                        "$16$P.ON3vlP/hvnsScxLMwRCeMvqLRcOluaDqhO8b/cA1u5E6TUDAuPO",
                         "Peter",
                         "John",
                         "admin@miu.edu",
@@ -203,7 +202,6 @@ public class ReportProductController {
                         ),
                 new User(2,
                         "mary",
-                        "$2a$16$P.ON3vlP/hvnsScxLMwRCeMvqLRcOluaDqhO8b/cA1u5E6TUDAuPO",
                         "Marry",
                         "Chan",
                         "marry@miu.edu",

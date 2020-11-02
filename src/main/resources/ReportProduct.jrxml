@@ -127,7 +127,7 @@
                     <reportElement style="Detail" x="279" y="2" width="131" height="15" uuid="da37212b-3331-4323-b278-63b40b8a2396">
                         <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1372eb65-f957-4aa9-951b-2782cf4c26dc"/>
                     </reportElement>
-                    <textFieldExpression><![CDATA[$F{vendor}]]></textFieldExpression>
+                    <textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
                 </textField>
 
                 <textField isStretchWithOverflow="true" pattern="MM/dd/yyyy">
@@ -150,7 +150,7 @@
                     <reportElement style="Detail" x="39" y="3" width="119" height="15" uuid="750277a5-b768-44c5-826b-32165e0e3356">
                         <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1372eb65-f957-4aa9-951b-2782cf4c26dc"/>
                     </reportElement>
-                    <textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+                    <textFieldExpression><![CDATA[$F{vendor}]]></textFieldExpression>
                 </textField>
 
                 <textField isStretchWithOverflow="true">
