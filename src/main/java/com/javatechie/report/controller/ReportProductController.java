@@ -74,7 +74,8 @@ public class ReportProductController {
 
         //****** 2. Mock up Product. Sometime we can filter by vendor_id
         // For example: https://pm-user-service-v2.herokuapp.com/api/user/list
-        List<Product> productList = mockProduct();
+        ProductContent productContent = restTemplate.getForObject(myProperties.getConfigValue("url.product") + "products", ProductContent.class);
+        List<Product> productList = productContent.getContent();
 
         //****** 3. Mock up User object for vendor
         // For example: https://product-service.herokuapp.com/api/product
