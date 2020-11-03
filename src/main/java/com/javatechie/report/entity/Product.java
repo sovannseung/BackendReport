@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 public class Product {
     private int id;
-    private String categoryName;
+    private Category category;
     private String name;
     private String description;
     private Double unitPrice;

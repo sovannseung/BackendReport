@@ -60,7 +60,7 @@ public class ReportProductController {
             DTOProductVendor dto = new DTOProductVendor();
             dto.setProduct_id(p.getId());
             dto.setName(p.getName());
-            dto.setCategoryName(p.getCategoryName());
+            dto.setCategoryName(p.getCategory().getCategoryName());
             dto.setVendor_id(p.getVendorId());
 
             User objUser = userHashMap.get(p.getVendorId());
@@ -115,7 +115,7 @@ public class ReportProductController {
     public List<Product> mockProduct () {
         return Arrays.asList(
                 new Product(13,
-                        "Books",
+                        new Category(1, "Books"),
                         "Crash Course in Python",
                         "Learn Python at your own pace. The author explains how the technology works in easy-to-understand language. This book includes working examples that you can apply to your own projects. Purchase the book and get started today!",
                         14.99,
@@ -126,7 +126,7 @@ public class ReportProductController {
                         "2020-10-25T10:24:14.000+00:00",
                         1),
                 new Product(14,
-                        "Books",
+                        new Category(1, "Books"),
                         "Become a Guru in JavaScript",
                         "Learn JavaScript at your own pace. The author explains how the technology works in easy-to-understand language. This book includes working examples that you can apply to your own projects. Purchase the book and get started today!",
                         20.99,
@@ -137,7 +137,7 @@ public class ReportProductController {
                         "2020-10-25T10:24:14.000+00:00",
                         2),
                 new Product(3,
-                        "Books",
+                        new Category(1, "Books"),
                         "Become a pro .Net Developer",
                         "Learn .net in an easy way",
                         9.99,

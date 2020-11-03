@@ -60,7 +60,7 @@ public class ReportDollarValueController {
             DTOProductVendor dto = new DTOProductVendor();
             dto.setProduct_id(p.getId());
             dto.setName(p.getName());
-            dto.setCategoryName(p.getCategoryName());
+            dto.setCategoryName(p.getCategory().getCategoryName());
             dto.setVendor_id(p.getVendorId());
 
             User objUser = userHashMap.get(p.getVendorId());
