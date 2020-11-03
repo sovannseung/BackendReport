@@ -2,7 +2,6 @@ package com.javatechie.report.controller;
 
 import com.javatechie.report.Config.MyProperties;
 import com.javatechie.report.entity.*;
-import com.javatechie.report.repository.ReportDollarValueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,25 +18,12 @@ import java.util.stream.Collectors;
 public class ReportDollarValueController {
 
     @Autowired
-    private ReportDollarValueRepository reportDollarValueRepository;
-
-    @Autowired
     private RestTemplate restTemplate;
 
     @Autowired
     private MyProperties myProperties;
 
     private ReportProductController obj = new ReportProductController();
-
-    //@GetMapping("/monolith/getAllReportDollarValue")
-    public List<ReportDollarValue> getAllReportDollarValueMono()  {
-        return reportDollarValueRepository.findAll();
-    }
-
-    //@GetMapping("/monolith/getReportDollarValueByVendorId/{vendor_id}")
-    public List<ReportDollarValue> getReportDollarValueByVendorIdMono(@PathVariable int vendor_id) {
-        return reportDollarValueRepository.findReportDollarValueByVendorId(vendor_id);
-    }
 
     @GetMapping("/api/getAllReportDollarValue")
     public List<ReportDollarValue> getAllReportDollarValue() {
@@ -55,9 +41,9 @@ public class ReportDollarValueController {
         List<OrderDetailDollarValue> orderDetailDollarValueList  = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "second-report", OrderDetailDollarValue[].class));
 
         //****** 2. Mock up Product. Sometime we can filter by vendor_id
-//        ProductContent productContent = restTemplate.getForObject(myProperties.getConfigValue("url.product") + "products/?size=9999", ProductContent.class);
-//        List<Product> productList = productContent.getContent();
-        List<Product> productList = obj.mockProduct();
+        ProductContent productContent = restTemplate.getForObject(myProperties.getConfigValue("url.product") + "products/?size=9999", ProductContent.class);
+        List<Product> productList = productContent.getContent();
+        //List<Product> productList = obj.mockProduct();
 
         //****** 3. Mock up User object for vendor
         List<User> userList = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.user") + "users", User[].class));
@@ -94,7 +80,7 @@ public class ReportDollarValueController {
             temp.setVendor_id(dtoObj.getVendor_id());
             temp.setVendor(dtoObj.getVendor());
             temp.setOrder_date(o.getOrder_date());
-            temp.setNumberof_order(o.getNumber_of_order());
+            temp.setNumber_of_order(o.getNumber_of_order());
             temp.setTotal(o.getTotal());
 
             result.add(temp);

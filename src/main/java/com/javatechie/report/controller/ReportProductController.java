@@ -2,20 +2,12 @@ package com.javatechie.report.controller;
 
 import com.javatechie.report.Config.MyProperties;
 import com.javatechie.report.entity.*;
-import com.javatechie.report.repository.ReportProductRepository;
-import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -25,36 +17,10 @@ import java.util.stream.Collectors;
 @RestController
 public class ReportProductController {
     @Autowired
-    private ReportProductRepository repositoryProduct;
-
-    @Autowired
     private RestTemplate restTemplate;
 
     @Autowired
     private MyProperties myProperties;
-
-    //@GetMapping("/monolith/getAllReportProduct")
-    public List<ReportProduct> getAllReportProductMono() {
-        return repositoryProduct.findAll();
-    }
-
-    //@GetMapping("/monolith/getReportProductByVendorId/{vendor_id}")
-    public List<ReportProduct> getReportProductByVendorIdMono(@PathVariable int vendor_id) {
-        return repositoryProduct.findReportProductByVendorId(vendor_id);
-    }
-
-    //@GetMapping("/api/test")
-    public List<Product> test() throws IOException, ParseException {
-        //return restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts", PostTest[].class);
-
-        //JSON parser object to parse read file
-        JSONParser jsonParser = new JSONParser();
-        FileReader readProduct = new FileReader("c:\\product.json");
-        Object objProduct = jsonParser.parse(readProduct);
-        //JSONArray productArray = (JSONArray) objProduct;
-        List<Product> productList = (List<Product>) objProduct; // Arrays.asList(productArray);
-        return productList;
-    }
 
     @GetMapping("/api/getAllReportProduct")
     public List<ReportProduct> getAllReportProduct() {
@@ -74,9 +40,9 @@ public class ReportProductController {
 
         //****** 2. Mock up Product. Sometime we can filter by vendor_id
         // For example: https://pm-user-service-v2.herokuapp.com/api/user/list
-//        ProductContent productContent = restTemplate.getForObject(myProperties.getConfigValue("url.product") + "products/?size=9999", ProductContent.class);
-//        List<Product> productList = productContent.getContent();
-        List<Product> productList = mockProduct();
+        ProductContent productContent = restTemplate.getForObject(myProperties.getConfigValue("url.product") + "products/?size=9999", ProductContent.class);
+        List<Product> productList = productContent.getContent();
+        //List<Product> productList = mockProduct();
 
         //****** 3. Mock up User object for vendor
         // For example: https://product-service.herokuapp.com/api/product
@@ -169,7 +135,7 @@ public class ReportProductController {
                         100,
                         "2020-10-25T10:24:14.000+00:00",
                         "2020-10-25T10:24:14.000+00:00",
-                        1),
+                        2),
                 new Product(3,
                         "Books",
                         "Become a pro .Net Developer",

@@ -13,11 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Data
-@Entity
-@Table(name = "vreportbyproduct")
 public class ReportProduct {
-    @Id
     private int rank;
     private int vendor_id;
     private String vendor;
