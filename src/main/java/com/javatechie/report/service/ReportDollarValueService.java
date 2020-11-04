@@ -1,5 +1,6 @@
 package com.javatechie.report.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.javatechie.report.Config.MyProperties;
 import com.javatechie.report.entity.ReportDollarValue;
 import net.sf.jasperreports.engine.*;
@@ -24,8 +25,11 @@ public class ReportDollarValueService {
     @Autowired
     private MyProperties myProperties;
 
-    public String exportReportDollarValue(int vendor_id) throws FileNotFoundException, JRException {
-        String path = myProperties.getConfigValue("report.path") + "\\ReportDollarvalue.pdf";
+    @Autowired
+    private UploadFile uploadFile;
+
+    public String exportReportDollarValue(int vendor_id) throws FileNotFoundException, JRException, JsonProcessingException {
+        String path = myProperties.getConfigValue("report.path") + "ReportDollarvalue.pdf";
         List<ReportDollarValue> reportProducts = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.own") + "getAllReportDollarValue/" + vendor_id, ReportDollarValue[].class));
 
         //load file and compile it
@@ -43,6 +47,6 @@ public class ReportDollarValueService {
 
         JasperExportManager.exportReportToPdfFile(jasperPrint, path );
 
-        return path;
+        return uploadFile.myUpload(path);
     }
 }

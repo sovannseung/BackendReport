@@ -37,6 +37,8 @@ public class ReportDollarValueController {
 
     private List<ReportDollarValue> reportDollarValues(int vendor_id)  {
 
+
+
         //****** 1. Get data from OrderDetailDollarValue by using RestTemplate
         List<OrderDetailDollarValue> orderDetailDollarValueList  = Arrays.asList(restTemplate.getForObject(myProperties.getConfigValue("url.orderdetail") + "second-report", OrderDetailDollarValue[].class));
 

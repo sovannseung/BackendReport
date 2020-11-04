@@ -1,5 +1,6 @@
 package com.javatechie.report.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.javatechie.report.entity.ResultReport;
 import com.javatechie.report.service.ReportDollarValueService;
 import com.javatechie.report.service.ReportProductService;
@@ -21,25 +22,25 @@ public class GenerateController {
     private ReportDollarValueService reportDollarValueService;
 
     @GetMapping("/api/generateReportProduct")
-    public ResultReport generateReportProduct() throws FileNotFoundException, JRException {
+    public ResultReport generateReportProduct() throws FileNotFoundException, JRException, JsonProcessingException {
         String result = reportProductService.exportReportProduct(0);
         return new ResultReport(result);
     }
 
     @GetMapping("/api/generateReportProduct/{vendor_id}")
-    public ResultReport generateReportProductByVendorId(@PathVariable int vendor_id) throws FileNotFoundException, JRException {
+    public ResultReport generateReportProductByVendorId(@PathVariable int vendor_id) throws FileNotFoundException, JRException, JsonProcessingException {
         String result = reportProductService.exportReportProduct(vendor_id);
         return new ResultReport(result);
     }
 
     @GetMapping("/api/generateReportDollarValue")
-    public ResultReport generateReportDollarValue() throws FileNotFoundException, JRException {
+    public ResultReport generateReportDollarValue() throws FileNotFoundException, JRException, JsonProcessingException {
         String result = reportDollarValueService.exportReportDollarValue(0);
         return new ResultReport(result);
     }
 
     @GetMapping("/api/generateReportDollarValue/{vendor_id}")
-    public ResultReport generateReportDollarValue(@PathVariable int vendor_id) throws FileNotFoundException, JRException {
+    public ResultReport generateReportDollarValue(@PathVariable int vendor_id) throws FileNotFoundException, JRException, JsonProcessingException {
         String result = reportDollarValueService.exportReportDollarValue(vendor_id);
         return new ResultReport(result);
     }
